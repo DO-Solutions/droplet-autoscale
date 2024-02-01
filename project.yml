@@ -1,0 +1,17 @@
+packages:
+  - name: autoscale
+    functions:
+      - name: scale
+        runtime: 'go:default'
+        web: true
+        parameters: {}
+        environment:
+          API_TOKEN: "${API_TOKEN}"
+          CLUSTER_TAG: "${CLUSTER_TAG}"
+          BASE_DROPLET: "${BASE_DROPLET}"
+          SNAPSHOT: "${SNAPSHOT}"
+          CLONE_PREFIX: "${CLONE_PREFIX}"
+          LOAD_BALANCER: "${LOAD_BALANCER}"
+        limits:
+          timeout: 180000
+
